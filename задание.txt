@@ -1,0 +1,61 @@
+#include <iostream> 
+#include <string>
+
+using namespace std;
+
+class Counter
+{
+public:
+
+	static void numbers(int a)
+	{
+	    int num = 1;
+		if (a % 2 != 0 && a != 0)
+		{
+    		cout << "=>" << num << "\n";
+		    if (a>0)
+		    {
+    			while (num != a) 
+    			{
+    				num = num + 1;
+    				cout << "=>" << num << "\n";
+    			};
+    
+    			while (a != 1)
+    			{
+    				a = (a - 2);
+    				cout << "==>" << a << '\n';
+    			};
+		    }
+		    else
+		    {
+		        while (num != a) 
+    			{
+    				num = num - 1;
+    				cout << "=>" << num << "\n";
+    			};
+    
+    			while (a != 1)
+    			{
+    				a = (a + 2);
+    				cout << "==>" << a << '\n';
+    			};
+		    }
+
+		}
+		else
+		{
+		    cout << "Невозможно выполнить условия задачи, в следующий раз введите нечётное число" << endl;
+		}
+	}
+};
+
+int main()
+{
+    	setlocale(LC_ALL, "rus");
+    	int number;
+	cout << "Введите число" << endl;
+	cin >> number;
+	Counter::numbers(number);
+	return 0;
+}
