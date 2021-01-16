@@ -37,6 +37,12 @@ int main()
 	int n;
 	cin >> n; // Производим ввод с клавиатуры
 
+	while (n <= 0)
+	{
+		cout << "\nThe number can't be negative or equals 0, please try again" << endl;
+		cin >> n;
+	}
+
 	Count f;
 	f.CountTwos(n); // Как уже было написано выше, если бы метод был статичным можно было бы вызвать его по другому
 
