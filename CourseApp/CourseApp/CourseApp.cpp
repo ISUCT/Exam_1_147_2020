@@ -1,21 +1,65 @@
-// CourseApp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-#include <cmath>
+using namespace std;
+
+class Game
+{
+private:
+	int rock = 1;
+	int skissors = 2;
+	int paper = 3;
+
+public:
+
+	static void for_game(int a, int b)
+	{
+		switch (a)
+		{
+		case 1:
+			if (b == 1)
+				cout << "Ничья";
+			else if (b == 2)
+				cout << "Победа 1 игрока";
+			else if (b == 3)
+				cout << "Победа 2 игрока";
+			break;
+
+		case 2:
+			if (b == 1)
+				cout << "Победа 2 игрока";
+			else if (b == 2)
+				cout << "Ничья";
+			else if (b == 3)
+				cout << "Победа 1 игрока";
+			break;
+
+		case 3:
+			if (b == 1)
+				cout << "Победа 1 игрока";
+			else if (b == 2)
+				cout << "Победа 2 игрока";
+			else if (b == 3)
+				cout << "Ничья";
+			break;
+		}
+	}
+};
 
 int main()
 {
-		std::cout << "Exam" << std::endl;
+	setlocale(LC_ALL, "ru");
+
+	cout << "Выберете для 1 игрока:" << "\n" << "1 - Камень" << "\n" << "2 - Ножницы" << "\n" << "3 - Бумага" << "\n";
+	int a;
+	cout << "Ваш выбор: ";
+	cin >> a;
+	system("cls");
+
+	cout << "Выберете для 2 игрока:" << "\n" << "1 - Камень" << "\n" << "2 - Ножницы" << "\n" << "3 - Бумага" << "\n";
+	int b;
+	cout << "Ваш выбор: ";
+	cin >> b;
+	system("cls");
+
+	cout << "Вывод: ";
+	Game::for_game(a, b);
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
